@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.yesRedirect {
+            background-color: blueviolet;
+            /* Add any additional styling for the background when redirected through the YES button */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text"> Do you love me?</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://64.media.tumblr.com/tumblr_lx7a9iXWJr1r4ghkoo1_250.gifv" alt="Cute animated illustration" width="500" height="400">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button> 
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+    <script>
+        function nextPage() {
+            document.body.classList.add('yesRedirect');
+            setTimeout(function () {
+                window.location.href = "https://media1.tenor.com/m/mtL92uRXBMwAAAAC/hug-love.gif";
+            }, 500); 
+            
+        }
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+            document.getElementById('noButton').style.left = x + 'px';
+            document.getElementById('noButton').style.top = y + 'px';
+        }
+
+         
+    </script>
+</body>
+</html>
